@@ -1,0 +1,78 @@
+/* Header.css */
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between elements */
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .logo img {
+    width: 120px; /* Adjusted size for the school logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 30px; /* Increase space between school logo and text */
+  }
+  
+  .header-text {
+    text-align: left;
+    margin-left: auto; /* Push the header text towards the right */
+  }
+  
+  .header-text h1 {
+    margin: 0;
+    font-size: 28px; /* Increase font size for the main title */
+  }
+  
+  .header-text h3 {
+    margin: 0;
+    font-size: 18px; /* Increase font size for the subtitle */
+    font-weight: normal;
+  }
+  
+  .middle-text {
+    flex-grow: 1; /* Allow middle text to grow and take available space */
+    text-align: center; /* Center align the middle text */
+  }
+  
+  .middle-text h2 {
+    margin: 0;
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make the text bold */
+    color: #ffeb3b; /* Change text color to a bright yellow for visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add a strong shadow for depth */
+    letter-spacing: 2px; /* Add spacing between letters */
+    text-transform: uppercase; /* Make the text uppercase for emphasis */
+    transition: transform 0.3s ease, color 0.3s ease; /* Add a transition effect */
+  }
+  
+  /* Add a hover effect */
+  .middle-text h2:hover {
+    transform: scale(1.05); /* Slightly enlarge the text on hover */
+    color: #ffd600; /* Change the color on hover */
+  }
+  
+  
+  .marks-logo img {
+    width: 80px; /* Adjust size for the marks management logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: 30px; /* Space between middle text and the marks logo */
+  }
+  
+  /* Additional styling to enhance the appearance */
+  .header-container h2,
+  .header-container h3 {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .header-container h1 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add subtle shadow for better readability */
+  }
+  
+  .marks-logo {
+    display: flex; /* Ensure the marks logo aligns properly */
+    align-items: center; /* Center align the logo vertically */
+  }
+  
