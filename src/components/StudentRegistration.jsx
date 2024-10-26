@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styling/StudentRegistration.css"; // Import the updated CSS file
+import DownloadPDF from "./DownloadPDF";
 
 const StudentRegistration = ({ addStudent }) => {
   const initialData = {
@@ -175,6 +176,8 @@ const handleSubmit = async (e) => {
           {isSubmitting ? "Registering..." : "Register Student"}
         </button>
       </form>
+
+    
     </div>
   );
 };

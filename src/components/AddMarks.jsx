@@ -1,7 +1,6 @@
-
-
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const subjects = [
   "Language 1 (English)",
@@ -11,9 +10,11 @@ const subjects = [
   "Social Science",
 ];
 
-const AddMarks = ({ students, saveMarks }) => {
+const AddMarks = () => {
   const { rollNo } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const { studentName, guardianName, classSection, dob } = location.state || {};
 
   const [marks, setMarks] = useState(
     subjects.reduce((acc, subject) => {
@@ -94,7 +95,7 @@ const AddMarks = ({ students, saveMarks }) => {
 
       const result = await response.json();
       console.log("Marks saved successfully:", result);
-      navigate("/display-marks-pdf", { state: { marks, rollNo } });
+      navigate("/display-marks-pdf", { state: { marks, rollNo, studentName,guardianName,classSection,dob } });
     } catch (error) {
       console.error("Error saving marks:", error);
     }
@@ -103,6 +104,11 @@ const AddMarks = ({ students, saveMarks }) => {
   return (
     <div>
       <h3>Add Marks for Roll No: {rollNo}</h3>
+      <h4>Student Name: {studentName}</h4>
+      <h4>Guardian Name: {guardianName}</h4>
+      <h4>Class/Section: {classSection}</h4>
+      <h4>Date of Birth: {dob}</h4>
+
       <form onSubmit={handleSubmit}>
         <table>
           <thead>

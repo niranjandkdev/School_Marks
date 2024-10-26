@@ -212,7 +212,14 @@ const DisplayStudent = ({ updateStudent }) => {
                         <button
                           className="action-button"
                           onClick={() =>
-                            navigate("/display-marks-pdf", { state: { rollNo: student.rollNo } })
+                            navigate("/display-marks-pdf", { state: { rollNo: 
+                              student.rollNo,
+                              studentName:student.studentName,
+                              guardianName:student.guardianName,
+                              dob:formatDate(student.dob),
+                              classSection:student.classSection,
+
+                             } })
                           }
                         >
                           View Marks
@@ -220,7 +227,14 @@ const DisplayStudent = ({ updateStudent }) => {
                       ) : (
                         <button
                           className="action-button"
-                          onClick={() => navigate(`/add-marks/${student.rollNo}`)}
+                          onClick={() => navigate(`/add-marks/${student.rollNo}`,{ state: { rollNo: 
+                            student.rollNo,
+                            studentName:student.studentName,
+                            guardianName:student.guardianName,
+                            dob:formatDate(student.dob),
+                            classSection:student.classSection,
+
+                           }})}
                         >
                           Add Marks
                         </button>
@@ -233,6 +247,9 @@ const DisplayStudent = ({ updateStudent }) => {
           </tbody>
         </table>
       )}
+      
+  
+
     </div>
   );
 };
